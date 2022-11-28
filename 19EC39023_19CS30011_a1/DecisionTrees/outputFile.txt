@@ -1,0 +1,158 @@
+
+
+---- Original Data ----
+
+   Restaurant Extra Cheeze Extra Mushroom   Size by Inch Extra Spicy  Price
+0           A          yes            yes             12          no    650
+1           B           no            yes             15         yes    800
+2           C           no             no              9          no    500
+3           D          yes             no             12         yes    700
+4           E          yes             no             12         yes    750
+5           F           no            yes             15         yes    900
+6           G          yes             no              9          no    600
+7           H          yes             no              9         yes    700
+8           I           no            yes             15          no    750
+9           J           no            yes             15          no    700
+10          K          yes            yes              8          no    600
+11          L           no             no             12         yes    700
+12          M          yes            yes              8          no    550
+13          N          yes            yes             12         yes    900
+14          O          yes             no             12          no    700
+15          P          yes            yes             12          no    750
+16          Q           no            yes             15         yes   1000
+17          R           no             no              9          no    650
+18          S          yes            yes             12         yes    950
+19          T          yes             no              9          no    700
+
+
+---- Data After Changing Columns ----
+
+   restaurant cheese mushroom  inch spicy  price
+0           A    yes      yes    12    no    650
+1           B     no      yes    15   yes    800
+2           C     no       no     9    no    500
+3           D    yes       no    12   yes    700
+4           E    yes       no    12   yes    750
+5           F     no      yes    15   yes    900
+6           G    yes       no     9    no    600
+7           H    yes       no     9   yes    700
+8           I     no      yes    15    no    750
+9           J     no      yes    15    no    700
+10          K    yes      yes     8    no    600
+11          L     no       no    12   yes    700
+12          M    yes      yes     8    no    550
+13          N    yes      yes    12   yes    900
+14          O    yes       no    12    no    700
+15          P    yes      yes    12    no    750
+16          Q     no      yes    15   yes   1000
+17          R     no       no     9    no    650
+18          S    yes      yes    12   yes    950
+19          T    yes       no     9    no    700
+
+
+---- Making the data in the required format ----
+
+   restaurant  cheese  mushroom  inch  spicy  price
+0           A       1         1    12      0    650
+1           B       0         1    15      1    800
+2           C       0         0     9      0    500
+3           D       1         0    12      1    700
+4           E       1         0    12      1    750
+5           F       0         1    15      1    900
+6           G       1         0     9      0    600
+7           H       1         0     9      1    700
+8           I       0         1    15      0    750
+9           J       0         1    15      0    700
+10          K       1         1     8      0    600
+11          L       0         0    12      1    700
+12          M       1         1     8      0    550
+13          N       1         1    12      1    900
+14          O       1         0    12      0    700
+15          P       1         1    12      0    750
+16          Q       0         1    15      1   1000
+17          R       0         0     9      0    650
+18          S       1         1    12      1    950
+19          T       1         0     9      0    700
+
+
+---- Checking the Data Types of the Columns -----
+
+restaurant    object
+cheese         int32
+mushroom       int32
+inch           int64
+spicy          int32
+price          int64
+dtype: object
+
+
+---- Best Obtained Tree ----
+
+Min Error Obtained in the Best Tree :  36.324157862838945
+Depth of the Best Tree Obtained:  3
+
+
+---- Pruning the Best Tree Depth ----
+
+
+
+Depth of Tree 0
+
+
+-- Tree Depth 0--
+
+|--- Mean Value
+
+
+Depth of Tree 1
+
+
+-- Tree Depth 1--
+
+|---feature_4 < 1
+|	|--- Mean Value
+|---feature_4 >= 1
+|	|--- Mean Value
+
+
+Depth of Tree 2
+
+
+-- Tree Depth 2--
+
+|---feature_4 < 1
+|	|---feature_3 < 12
+|	|	|--- Mean Value
+|	|---feature_3 >= 12
+|	|	|--- Mean Value
+|---feature_4 >= 1
+|	|---feature_2 < 1
+|	|	|--- Mean Value
+|	|---feature_2 >= 1
+|	|	|--- Mean Value
+
+
+Depth of Tree 3
+
+
+-- Tree Depth 3--
+
+|---feature_4 < 1
+|	|---feature_3 < 12
+|	|	|---feature_0 < R
+|	|	|	|--- Mean Value
+|	|	|---feature_0 >= R
+|	|	|	|--- Mean Value
+|	|---feature_3 >= 12
+|	|	|---feature_0 < O
+|	|	|	|--- Mean Value
+|	|	|---feature_0 >= O
+|	|	|	|--- Mean Value
+|---feature_4 >= 1
+|	|---feature_2 < 1
+|	|	|--- Mean Value
+|	|---feature_2 >= 1
+|	|	|---feature_0 < Q
+|	|	|	|--- Mean Value
+|	|	|---feature_0 >= Q
+|	|	|	|--- Mean Value
